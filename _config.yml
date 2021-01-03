@@ -11,21 +11,21 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Wenhuang"
+title                    : "A blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
 description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://wenhuanghuang.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     :  # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -51,7 +51,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 algolia:
@@ -93,10 +93,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Wenhuang"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  name             : "Wenhuang Huang"
+  avatar           : "/assets/images/buildanapp.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Do you want to build an App?"
+  location         : "LA, US"
   email            :
   links:
     - label: "Email"
@@ -144,7 +144,7 @@ footer:
 # Reading Files
 include:
   - .htaccess
-  - _pages
+  - /docs
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -170,8 +170,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
@@ -274,8 +272,24 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
-      comments: # true
+      comments:  true
       share: true
       related: true
+
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "docs"
+
